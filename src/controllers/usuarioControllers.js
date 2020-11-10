@@ -19,6 +19,7 @@ exports.Insert = (req, res, next) => {
         //then = registra o que queremos que aconteca quando a Promise for resolvida
         .then(usuario => {
             if (usuario) {
+                console.log("ID DO USUARIO CADASTRADO: " + usuario.id);
                 res.status(status.OK).send(usuario);
             } else {
                 res.status(status.NOT_FOUND).send();

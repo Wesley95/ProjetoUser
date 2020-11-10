@@ -15,9 +15,9 @@ exports.Insert = (req, res, next) => {
         disponivel: disponivel,
     })
         //then = registra o que queremos que aconteca quando a Promise for resolvida
-        .then(usuario => {
-            if (usuario) {
-                res.status(status.OK).send(usuario);
+        .then(produto => {
+            if (produto) {
+                res.status(status.OK).send(produto);
             } else {
                 res.status(status.NOT_FOUND).send();
             }

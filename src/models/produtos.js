@@ -31,6 +31,8 @@ const Produto = sequelize.define("produtos", {
         type: Sequelize.BOOLEAN(), 
         defaultValue: true 
     } 
+
+    
 });  
 
 module.exports = Produto; 
