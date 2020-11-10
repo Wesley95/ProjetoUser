@@ -43,11 +43,11 @@ function addProducts(products, request_id) {
 
 exports.SelectAll = (req, res, next) => {
 
-    const query = "SELECT usuarios.id AS 'UsuarioID', usuarios.nome AS 'UsuarioNome', pedidos.pedido_id AS 'PedidoID', " +
-        "pedidoprodutos.id AS 'ProdutoPedidoID', pedidoprodutos.total AS 'TotalProduto', produtos.nome AS 'NomeProduto', " +
-        "produtos.preco AS 'PrecoProduto', pedidos.createdAt AS 'DataCriacao' " +
-        "FROM usuarios INNER JOIN pedidos ON usuarios.id = pedidos.id INNER JOIN pedidoprodutos " +
-        "ON pedidoprodutos.request_id = pedidos.pedido_id INNER JOIN produtos ON pedidoprodutos.product_id = produtos.id;";
+    const query = "SELECT usuarios.id AS 'UsuarioID', usuarios.nome AS 'UsuarioNome', Pedidos.pedido_id AS 'PedidoID', " +
+        "PedidoProdutos.id AS 'ProdutoPedidoID', PedidoProdutos.total AS 'TotalProduto', produtos.nome AS 'NomeProduto', " +
+        "produtos.preco AS 'PrecoProduto', Pedidos.createdAt AS 'DataCriacao' " +
+        "FROM usuarios INNER JOIN Pedidos ON usuarios.id = Pedidos.id INNER JOIN PedidoProdutos " +
+        "ON PedidoProdutos.request_id = Pedidos.pedido_id INNER JOIN produtos ON PedidoProdutos.product_id = produtos.id;";
 
     return sequelize.query(query, { type: QueryTypes.SELECT }).then(function (response) {
         if (response) {
